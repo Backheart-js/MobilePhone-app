@@ -1,0 +1,29 @@
+@import '../../scss/variable';
+
+.search__form {
+    display: flex;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.search__input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: $text_color;
+        font-size: 13px;
+    }
+}
+
+.search__btn {
+    width: 40px;
+    height: 40px;
+}

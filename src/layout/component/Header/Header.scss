@@ -1,0 +1,44 @@
+@import '../../../scss/variable';
+
+#header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $header_height;
+    background-color: $primary_color;
+}
+
+.header__box {
+    max-width: 1220px;
+    margin: auto;
+}
+
+.top__banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 44px;
+}
+.top__banner-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.header__main-wrapper {
+    align-items: center;
+    height: 64px;
+    padding-top: 10px;
+}
+
+.header__logo-img {
+    width: 100%;
+    height: 100%;
+}
+
+.header__sub-wrapper {
+
+}
