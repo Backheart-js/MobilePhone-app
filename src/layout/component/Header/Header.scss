@@ -1,10 +1,6 @@
 @import '../../../scss/variable';
 
 #header-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     height: $header_height;
     background-color: $primary_color;
 }
@@ -39,6 +35,68 @@
     height: 100%;
 }
 
-.header__sub-wrapper {
-
+.historyShopping__wrapper {
+    height: 40px;
+    width: 25%;
 }
+.cart__wrapper {
+    height: 40px;
+    width: calc(25% + 12px);
+}
+.historyShopping__link,
+.cart__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text_color;
+    font-size: 13px;
+    padding: 6px 12px;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    background: rgba(255,172,10,.6);
+
+    & > span {
+        text-align: center;
+    }
+}
+
+.func__wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    padding: 0 12px;
+    width: calc(25% - 24px);
+
+    & + .func__wrapper {
+
+        &::before {
+            content: " ";
+            position: absolute;
+            height: 32px;
+            width: 1px;
+            background-color: #ffe56c;
+            left: 0;
+
+        }
+    }
+}
+.func__link {
+    display: flex;
+    justify-content: center;
+}
+
+.header__sub-wrapper {
+    padding-top: 10px;
+}
+
+.header__sub-list {
+}
+
+.header__sub-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+

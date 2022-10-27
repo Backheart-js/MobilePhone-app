@@ -25,3 +25,20 @@
             npm i flowbite flowbite-react
         `
     * Trang chủ: https://flowbite.com
+
+### Note:
+1. Khi muốn dùng file ảnh trong dự án, ta dùng 1 file index để export file ảnh ra rồi đứng từ file khác import vào:
+    ```javascript
+        const icons = {
+            phone: require('~/assets/Icons/icon-mobilephone.png'),
+            laptop: require('~/assets/Icons/icon-laptop.png'),
+            tablet: require('~/assets/Icons/icon-tablet.png'),
+            phu_kien: require('~/assets/Icons/icon-phu-kien.png'),
+            pc: require('~/assets/Icons/icon-pc.png'),
+            smart_watch: require('~/assets/Icons/icon-smartwatch.png'),
+            dong_ho: require('~/assets/Icons/icon-watch.png'),
+
+        }
+
+        export default icons;
+    ```

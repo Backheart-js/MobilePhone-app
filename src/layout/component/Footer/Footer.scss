@@ -1,0 +1,36 @@
+@import '../../../scss/variable';
+
+#footer-wrapper {
+    border-top: 1px solid #e2e2e2;
+    background: #fff;
+}
+
+.footer__box {
+    max-width: 1220px;
+    margin: auto;
+    padding: 15px 0 15px;
+}
+
+.footer__menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.footer__menu-link {
+    display: flex;
+    align-items: center;
+    color: $text_color;
+    line-height: 21px;
+    transition: all .3s ease-out;
+
+    &.footer__phoneNumber {
+        font-weight: 600;
+        color: #2f80ed;
+    }
+
+    &:hover {
+        color: #2f80ed;
+    }
+}
+
