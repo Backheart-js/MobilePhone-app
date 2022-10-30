@@ -120,9 +120,29 @@ function Footer() {
           </ul>
         </section>
         <section className="footer__col col-span-3">
-          <ul className="footer__menu-list">
+          <div className="footer__logo-wrapper">
+            <div className="footer__social-wrapper">
+              <a href="" className="footer__social-link">
+                
+              </a>
+            </div>
+            <div className="footer__social-wrapper">
+              <a href="" className="footer__social-link">
+                
+              </a>
+            </div>
+            <div className="footer__social-wrapper">
+              <a href="" className="footer__social-link">
+                
+              </a>
+            </div>
+          </div>
+          <div className="footer__logo-wrapper">
+            
+          </div>
+          <div className="footer__logo-wrapper">
 
-          </ul>
+          </div>
         </section>
       </div>
     </footer>

@@ -1,0 +1,49 @@
+$promo_slick_height: 181.5px;
+
+.mainBanner {
+    width: 100%;
+    height: auto;
+}
+
+.mainContent__wrapper {
+    max-width: 1220px;
+    margin: 0 auto;
+    transform: translateY(calc($promo_slick_height / 2 * -1));
+}
+
+.home__slick {
+    height: $promo_slick_height;
+    margin-bottom: 30px;
+}
+
+.home__promo-wrapper {
+
+}
+.home__promo-item {
+    height: 100px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px 0;
+}
+
+.home__promo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > span {
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        color: #222;
+        font-size: 22px;
+        line-height: 28px;
+        text-align: left;
+        margin-left: 10px;
+        max-width: 65%;
+    }
+}
+
+.home__promo-img {
+    height: 70px;
+}

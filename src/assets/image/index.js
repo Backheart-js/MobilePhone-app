@@ -1,0 +1,11 @@
+export const banner = {
+    bigBanner: require('~/assets/image/banner/main_slide.png'),
+    topBanner: require('~/assets/image/banner/top_panel.png'),
+}
+
+export const poster = {
+    apple: require('~/assets/image/poster/apple-poster.png'),
+    oppo: require('~/assets/image/poster/oppo-poster.png'),
+    vivo: require('~/assets/image/poster/vivo-poster.png'),
+    realme: require('~/assets/image/poster/realme-poster.png'),
+}

@@ -14,7 +14,7 @@ function Router() {
         <Route path="/:catalog" element={<Category/>} />
         <Route path="/:catalog/:product" element={<Detail/>} />
         <Route path="/cart" element={<Cart/>} />
-        <Route path="/events" element={<Events/>} />
+        <Route path="/events/:events" element={<Events/>} />
         <Route path="/search/q=:keyword" element={<SearchResult/>} />
     </Routes>
   )

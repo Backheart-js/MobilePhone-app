@@ -2,7 +2,7 @@ import { faCaretDown, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-import Search from '~/component/Search';
+import Search from '~/components/Search';
 import './Header.scss'
 import icons from '~/assets/Icons';
 
