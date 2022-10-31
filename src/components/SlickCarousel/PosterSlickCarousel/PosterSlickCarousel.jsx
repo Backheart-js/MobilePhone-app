@@ -6,17 +6,13 @@ import Slider from 'react-slick';
 import './PosterSlickCarousel.scss';
 import PosterSlickItem from './PosterSlickItem';
 
-function PosterSlickCarousel({ isProduct = false, posterImage = [], className, ...props }) {
+function PosterSlickCarousel({ posterImage = [], className, ...props }) {
   const [dataItems, setDataItems] = useState([])
   
   useEffect(() => {
-    if (!isProduct) {
-      setDataItems(posterImage)
-    }
-  
-    return () => {
-      
-    }
+    setDataItems(posterImage)
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
 
