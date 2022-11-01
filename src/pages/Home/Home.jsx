@@ -4,8 +4,90 @@ import "./Home.scss";
 import * as image from "~/assets/image";
 import PosterSlickCarousel from "~/components/SlickCarousel/PosterSlickCarousel/PosterSlickCarousel";
 import IndexTitle from "~/components/IndexTitle";
+import CategoryBox from "./components/CategoryBox";
+import TabProduct from "./components/TabProduct";
 
 function Home() {
+  const category = [
+    {
+      image: "https://cdn.tgdd.vn//content/Laptop-129x129.png",
+      title: "Laptop",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Tablet-128x129.png",
+      title: "Tablet",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Donghothongminh-128x129.png",
+      title: "Đồng hồ thông minh",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/DT-128x129.png",
+      title: "Điện thoại giá rẻ",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Donghothoitrang-128x129.png",
+      title: "Đồng hồ thời trang",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Thietbimang-128x129.png",
+      title: "Thiết bị mạng",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Oplung-128x128.png",
+      title: "Ốp lưng",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/chuot-128x129.png",
+      title: "Chuột máy tính",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/ban-phim-128x129.png",
+      title: "Bàn phím",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Simthecao-129x129.png",
+      title: "Sim, thẻ cào",
+    },
+    { image: "https://cdn.tgdd.vn//content/Loa-128x128.png", title: "Loa" },
+    {
+      image: "https://cdn.tgdd.vn//content/Tainghe-128x129.png",
+      title: "Tai nghe",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Sacduphong-128x129.png",
+      title: "Sạc dự phòng",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Capsac-129x129.png",
+      title: "Cáp sạc",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Maytinhbo-128x129.png",
+      title: "Máy tính bộ",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Mayin-128x129.png",
+      title: "Máy in",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Manhinhmaytinh-128x129.png",
+      title: "Màn hình máy tính",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/Phukiengaming-128x129.png",
+      title: "Phụ kiện gaming",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/icon-camera-128x129.png",
+      title: "Camera, webcam",
+    },
+    {
+      image: "https://cdn.tgdd.vn//content/may-chieu-icon-128x129.png",
+      title: "Thiết bị nhà thông minh",
+    },
+  ];
+
   return (
     <div className="content__wrapper w-full">
       <section className="mainBanner__wrapper w-full">
@@ -32,7 +114,7 @@ function Home() {
           slidesToScroll={2}
         />
 
-        <ul className="home__promo-wrapper grid grid-cols-4 gap-4">
+        <ul className="home__promo-wrapper grid grid-cols-4 gap-4 section-space">
           <li className="home__promo-item col-span-1">
             <a href="/" className="home__promo-link">
               <img
@@ -83,19 +165,19 @@ function Home() {
           />
         </div>
 
-        <section className="home__event-wrapper">
+        <section className="home__event-wrapper section-space">
           <p className="home__event-title">Tuần lễ Apple</p>
           <div className="home__event-posterSlick--wrapper">
             <PosterSlickCarousel
               className={"mx-2 mb-[15px]"}
               posterImage={[
-                'https://cdn.tgdd.vn/2022/10/banner/Banner-Iphone-14-380x200-1.png',
-                'https://cdn.tgdd.vn/2022/10/banner/Banner-Iphone-11-380x200-1.png',
-                'https://cdn.tgdd.vn/2022/10/banner/Artboard-2-380x200.png',
-                'https://cdn.tgdd.vn/2022/10/banner/Banner-Iphone-13-Pro-Series-380x200-1.png',
-                'https://cdn.tgdd.vn/2022/10/banner/macbook-tuan-le-apple-desk-2-380x200.png',
-                'https://cdn.tgdd.vn/2022/10/banner/380x200-380x200-12.png',
-                'https://cdn.tgdd.vn/2022/10/banner/Banner-Ipad-380x200-1.png',
+                "https://cdn.tgdd.vn/2022/10/banner/Banner-Iphone-14-380x200-1.png",
+                "https://cdn.tgdd.vn/2022/10/banner/Banner-Iphone-11-380x200-1.png",
+                "https://cdn.tgdd.vn/2022/10/banner/Artboard-2-380x200.png",
+                "https://cdn.tgdd.vn/2022/10/banner/Banner-Iphone-13-Pro-Series-380x200-1.png",
+                "https://cdn.tgdd.vn/2022/10/banner/macbook-tuan-le-apple-desk-2-380x200.png",
+                "https://cdn.tgdd.vn/2022/10/banner/380x200-380x200-12.png",
+                "https://cdn.tgdd.vn/2022/10/banner/Banner-Ipad-380x200-1.png",
               ]}
               infinite
               speed={500}
@@ -108,61 +190,150 @@ function Home() {
           </a>
         </section>
 
-        <section className="home__trending-wrapping">
-          <IndexTitle className={'home__trending-title'}>
+        <section className="home__trending-wrapping section-space">
+          <IndexTitle className={"home__trending-title"}>
             Xu hướng mua sắm
           </IndexTitle>
           <ul className="home__trending-list grid grid-cols-4 gap-2">
             <li className="home__trending-item col-span-1">
               <a href="/" className="home__trending-link">
-                <img src="https://cdn.tgdd.vn/2022/08/banner/Frame-4919-280x235.png" alt="" className="home__trending-img" />
+                <img
+                  src="https://cdn.tgdd.vn/2022/08/banner/Frame-4919-280x235.png"
+                  alt=""
+                  className="home__trending-img"
+                />
                 <span className="trending-category">Điện thoại</span>
-                <strong className="trending-title">Galaxy Z Fold4 | Z Flip4</strong>
+                <strong className="trending-title">
+                  Galaxy Z Fold4 | Z Flip4
+                </strong>
               </a>
             </li>
             <li className="home__trending-item col-span-1">
               <a href="/" className="home__trending-link">
-                <img src="https://cdn.tgdd.vn/2022/10/banner/xh-mac-desk-moi-280x235.png" alt="" className="home__trending-img" />
+                <img
+                  src="https://cdn.tgdd.vn/2022/10/banner/xh-mac-desk-moi-280x235.png"
+                  alt=""
+                  className="home__trending-img"
+                />
                 <span className="trending-category">Macbook</span>
-                <strong className="trending-title">Giá chỉ từ 22.990.000 đ</strong>
+                <strong className="trending-title">
+                  Giá chỉ từ 22.990.000 đ
+                </strong>
               </a>
             </li>
             <li className="home__trending-item col-span-1">
               <a href="/" className="home__trending-link">
-                <img src="https://cdn.tgdd.vn/2022/09/banner/Frame-47574-280x235.png" alt="" className="home__trending-img" />
+                <img
+                  src="https://cdn.tgdd.vn/2022/09/banner/Frame-47574-280x235.png"
+                  alt=""
+                  className="home__trending-img"
+                />
                 <span className="trending-category">Tai nghe không dây</span>
                 <strong className="trending-title">Đặt ngay</strong>
               </a>
             </li>
             <li className="home__trending-item col-span-1">
               <a href="/" className="home__trending-link">
-                <img src="https://cdn.tgdd.vn/2022/10/banner/kidcare-s88-280x235.png" alt="" className="home__trending-img" />
-                <span className="trending-category">Đồng hồ định vị trẻ em</span>
+                <img
+                  src="https://cdn.tgdd.vn/2022/10/banner/kidcare-s88-280x235.png"
+                  alt=""
+                  className="home__trending-img"
+                />
+                <span className="trending-category">
+                  Đồng hồ định vị trẻ em
+                </span>
                 <strong className="trending-title">Mua ngay</strong>
               </a>
             </li>
           </ul>
         </section>
 
-        <section className="home__discount-online">
-          <IndexTitle className={'pb-[15px]'}>
+        <section className="home__category-wrapper section-space">
+          <IndexTitle className={"px-[22px] py-[15px]"}>
+            Danh mục nổi bật
+          </IndexTitle>
+          <div className="home__category-box grid grid-cols-10 px-10 pb-8">
+            {category.map((product, index) => (
+              <CategoryBox
+                className={"py-2"}
+                key={index}
+                imgSrc={product.image}
+                title={product.title}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section className="home__discount-online section-space">
+          <IndexTitle className={"pb-[15px]"}>
             Giảm thêm khi thanh toán online
           </IndexTitle>
           <PosterSlickCarousel
-            className={"mx-[-8px] mb-[15px]"}
+            className={"mb-[15px]"}
             posterImage={[
-              'https://cdn.tgdd.vn/2022/09/banner/VCBDesk--1--380x200.png',
-              'https://cdn.tgdd.vn/2022/06/banner/EXB-500k-380x200.png',
-              'https://cdn.tgdd.vn/2022/08/banner/VNPay-iPhone-iPad-380x200.png',
-              'https://cdn.tgdd.vn/2022/10/banner/Desk--1--380x200.jpg',
-              'https://cdn.tgdd.vn/2022/08/banner/380x200--1--380x200.jpg',
-              'https://cdn.tgdd.vn/2022/06/banner/VNPay-Toan-bo-san-pham-380x200.png',
+              "https://cdn.tgdd.vn/2022/09/banner/VCBDesk--1--380x200.png",
+              "https://cdn.tgdd.vn/2022/06/banner/EXB-500k-380x200.png",
+              "https://cdn.tgdd.vn/2022/08/banner/VNPay-iPhone-iPad-380x200.png",
+              "https://cdn.tgdd.vn/2022/10/banner/Desk--1--380x200.jpg",
+              "https://cdn.tgdd.vn/2022/08/banner/380x200--1--380x200.jpg",
+              "https://cdn.tgdd.vn/2022/06/banner/VNPay-Toan-bo-san-pham-380x200.png",
             ]}
             infinite
             speed={500}
             slidesToShow={3}
             slidesToScroll={3}
           />
+        </section>
+
+        <section className="home__suggest-products section-space">
+          <IndexTitle className={"pb-[15px]"}>Gợi ý sản phẩm</IndexTitle>
+          <TabProduct
+            panels={[
+              {
+                image:
+                  "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/homev2/goiy-1.png",
+                title: "Cho bạn",
+              },
+              {
+                image:
+                  "https://cdn.tgdd.vn/2022/08/campaign/icon-xa-hang-50-50x50-2.png",
+                title: "Xả hàng giảm sốc",
+              },
+              {
+                image:
+                  "https://cdn.tgdd.vn/2022/08/campaign/50x50-chi-giam-online-48x52-2.png",
+                title: "Săn sale Online",
+              },
+              {
+                image:
+                  "https://cdn.tgdd.vn/2022/09/campaign/lap-50x54-50x54-2.png",
+                title: "Laptop tựu trường",
+              }
+            ]}
+          />
+        </section>
+
+        <section className="home__trademark section-space">
+          <IndexTitle className={'mb-[15px]'}>
+            Chuyên trang thương hiệu
+          </IndexTitle>
+          <div className="home__trademark-box grid grid-cols-3 gap-3">
+            <div className="home__trademark-item col-span-1">
+              <a href="/" className="home__trademark-link">
+                <img src="https://cdn.tgdd.vn/2022/10/banner/samsung-390-210-390x210.png" alt="" className="w-full rounded-xl" />
+              </a>
+            </div>
+            <div className="home__trademark-item col-span-1">
+              <a href="/" className="home__trademark-link">
+                <img src="https://cdn.tgdd.vn/2022/07/banner/6BD1D926-AFFA-45E4-A5C6-DE9386EED1CB-390x210.png" alt="" className="w-full rounded-xl" />
+              </a>
+            </div>
+            <div className="home__trademark-item col-span-1">
+              <a href="/" className="home__trademark-link">
+                <img src="https://cdn.tgdd.vn/2022/08/banner/lenovoLaptop-390x210-1.png" alt="" className="w-full rounded-xl" />
+              </a>
+            </div>
+          </div>
         </section>
       </div>
     </div>

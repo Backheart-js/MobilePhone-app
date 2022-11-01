@@ -1,34 +1,142 @@
 {
-    "id": 1,
-    "name": "Iphone 11",
-    "brand": "Apple",
-    "condition": "new",
-    "is_discount": true,
-    "discount": 11599000,
-    "price": 14599000,
-    "release_date": "20/9/2019",
-    "image": [
-      "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-trang-1-2-org.jpg",
-      "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-den-1-1-1-org.jpg",
-      "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-vang-1-2-org.jpg",
-      "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-xanh-la-1-1-org.jpg",
-      "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-do-1-1-1-org.jpg"
-    ],
-    "color": [
-      "black",
-      "white",
-      "gold",
-      "red",
-      "green"
-    ],
-    "properties": {
-      "screen": "IPS LCD 6.1 inch Liquid Retina",
-      "operator_system": "IOS 15",
-      "camera_front": "12 MP",
-      "camera_back": "2 camera 12 MP",
-      "core": "Apple A13 Bionic",
-      "ram": "4 GB",
-      "rom": "64 GB",
-      "battery": "3110 MAH"
+  "dtdd": [
+    {
+      "id": 1,
+      "name": "Iphone 11",
+      "brand": "Apple",
+      "condition": "new",
+      "is_discount": true,
+      "discount": 11599000,
+      "price": 14599000,
+      "release_date": "20/9/2019",
+      "image": [
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-trang-1-2-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-den-1-1-1-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-vang-1-2-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-xanh-la-1-1-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-do-1-1-1-org.jpg"
+      ],
+      "color": [
+        "black",
+        "white",
+        "gold",
+        "red",
+        "green"
+      ],
+      "properties": {
+        "screen": "IPS LCD 6.1 inch Liquid Retina",
+        "operator_system": "IOS 15",
+        "camera_front": "12 MP",
+        "camera_back": "2 camera 12 MP",
+        "core": "Apple A13 Bionic",
+        "ram": "4 GB",
+        "rom": "64 GB",
+        "battery": "3110 MAH"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Iphone 1 Pro",
+      "brand": "Apple",
+      "condition": "new",
+      "is_discount": true,
+      "discount": 11599000,
+      "price": 14599000,
+      "release_date": "20/9/2019",
+      "image": [
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-trang-1-2-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-den-1-1-1-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-vang-1-2-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-xanh-la-1-1-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-do-1-1-1-org.jpg"
+      ],
+      "color": [
+        "black",
+        "white",
+        "gold",
+        "red",
+        "green"
+      ],
+      "properties": {
+        "screen": "IPS LCD 6.1 inch Liquid Retina",
+        "operator_system": "IOS 15",
+        "camera_front": "12 MP",
+        "camera_back": "2 camera 12 MP",
+        "core": "Apple A13 Bionic",
+        "ram": "4 GB",
+        "rom": "64 GB",
+        "battery": "3110 MAH"
+      }
     }
-  }
+  ],
+  "dtdd": [
+    {
+      "id": 1,
+      "name": "Dell Xps 11",
+      "brand": "Dell",
+      "condition": "new",
+      "is_discount": true,
+      "discount": 20550000,
+      "price": 25545000,
+      "release_date": "20/9/2019",
+      "image": [
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-trang-1-2-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-den-1-1-1-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-vang-1-2-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-xanh-la-1-1-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-do-1-1-1-org.jpg"
+      ],
+      "color": [
+        "black",
+        "white",
+        "gold",
+        "red",
+        "green"
+      ],
+      "properties": {
+        "screen": "IPS LCD 6.1 inch Liquid Retina",
+        "operator_system": "IOS 15",
+        "camera_front": "12 MP",
+        "camera_back": "2 camera 12 MP",
+        "core": "Apple A13 Bionic",
+        "ram": "4 GB",
+        "rom": "64 GB",
+        "battery": "3110 MAH"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Dell Xps 12",
+      "brand": "Dell",
+      "condition": "new",
+      "is_discount": true,
+      "discount": 23500000,
+      "price": 27650000,
+      "release_date": "20/9/2019",
+      "image": [
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-trang-1-2-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-den-1-1-1-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-vang-1-2-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-xanh-la-1-1-org.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-do-1-1-1-org.jpg"
+      ],
+      "color": [
+        "black",
+        "white",
+        "gold",
+        "red",
+        "green"
+      ],
+      "properties": {
+        "screen": "IPS LCD 6.1 inch Liquid Retina",
+        "operator_system": "IOS 15",
+        "camera_front": "12 MP",
+        "camera_back": "2 camera 12 MP",
+        "core": "Apple A13 Bionic",
+        "ram": "4 GB",
+        "rom": "64 GB",
+        "battery": "3110 MAH"
+      }
+    }
+  ]
+}

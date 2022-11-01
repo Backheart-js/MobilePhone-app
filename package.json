@@ -15,6 +15,7 @@
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.3.2",
     "hero-slider": "^3.1.0",
+    "json-server": "^0.17.0",
     "normalize.css": "^8.0.1",
     "postcss": "^8.4.18",
     "react": "^18.2.0",

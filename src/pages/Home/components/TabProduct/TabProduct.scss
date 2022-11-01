@@ -1,0 +1,33 @@
+#tabProduct {
+
+}
+
+.tab__panels-wrapper {
+    
+}
+
+.panel__item {
+    max-width: 300px;
+    min-width: 285px;
+    padding: 8px 0;
+    background-color: #fff;
+    border-radius: 12px;
+
+    &.active {
+        background: linear-gradient(64.85deg,#fca600 23.67%,#ffd41d 106.12%);
+    }
+}
+
+.panel__img {
+    width: 50px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.panel__title {
+    color: #555;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    user-select: none;
+}

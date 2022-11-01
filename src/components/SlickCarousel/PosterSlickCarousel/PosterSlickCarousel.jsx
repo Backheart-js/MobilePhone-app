@@ -18,7 +18,7 @@ function PosterSlickCarousel({ posterImage = [], className, ...props }) {
 
   return (
     <Slider
-      className={className}
+      className={`mx-[-8px] ${className}`}
       {...props}
     >
       {dataItems.map((dataItem, index) => (
