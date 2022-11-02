@@ -1,6 +1,6 @@
 import httpRequest from "./httpRequest";
 
-export const categpry = {
+export const tgtdCategory = {
     dtdd: 'dtdd',
     laptop: 'laptop',
     tablet: 'tablet',
@@ -12,12 +12,26 @@ export const categpry = {
 }
 
 const tgtdAPI = {
-    getProductsList: (category, params) => {
+    getProductsList: (category, params = {}) => {
         const url = `${category}`;
-        return httpRequest.get(url, params);
+        return httpRequest.get(url, { params });
     },
-    addProduct: (category, params) => {
+    addProduct: (category, data) => {
         const url = `${category}`;
-        return httpRequest.post(url, params);
+        return httpRequest.post(url, data);
+    },
+    updateProduct: (category, id, newData) => {
+        const url = `${category}/${id}`;
+        return httpRequest.put(url, newData);
+    },
+    removeProduct: (category, id) => {
+        const url = `${category}/${id}`;
+        return httpRequest.delete(url);
+    },
+    getDetail: (category, id) => {
+        const url = `${category}/${id}`;
+        return httpRequest.get(url);
     }
 }
+
+export default tgtdAPI;
