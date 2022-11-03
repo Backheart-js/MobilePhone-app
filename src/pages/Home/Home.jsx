@@ -169,7 +169,7 @@ function Home() {
           <p className="home__event-title">Tuần lễ Apple</p>
           <div className="home__event-posterSlick--wrapper">
             <PosterSlickCarousel
-              className={"mx-2 mb-[15px]"}
+              className={"px-3 mb-[15px]"}
               posterImage={[
                 "https://cdn.tgdd.vn/2022/10/banner/Banner-Iphone-14-380x200-1.png",
                 "https://cdn.tgdd.vn/2022/10/banner/Banner-Iphone-11-380x200-1.png",

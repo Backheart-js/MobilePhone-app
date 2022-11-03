@@ -1,4 +1,9 @@
+import { faPen, faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { modalSlice } from "~/redux/reducer/modalSlice";
 
 import tgtdAPI, { tgtdCategory } from "~/utils/tgtdAPI";
 
@@ -6,12 +11,32 @@ function AdminHome() {
   const [dataFromApi, setDataFromApi] = useState([]);
   const [categoryIsShowing, setCategoryIsShowing] = useState(tgtdCategory.dtdd);
 
+  const dispatch = useDispatch();
+
   const handleOptionChange = (e) => {
     setCategoryIsShowing(e.target.value);
   };
 
+  const handleClick = (type) => {
+    if (type === "ADMIN_update") {
+      dispatch(modalSlice.actions.open(type))
+    }
+  }
+
+  const handleDelete = (id, category = categoryIsShowing) => {
+    let confirmRemove = window.confirm("Bạn có muốn xóa sản phẩm này?");
+
+    if (confirmRemove) {
+      try {
+        tgtdAPI.removeProduct(category, id)
+        alert("Đã xóa sản phẩm")
+      } catch (error) {
+        alert("Lỗi: " + error)
+      }
+    }
+  }
+
   useEffect(() => {
-    console.log(categoryIsShowing);
     const getData = async () => {
       const response = await tgtdAPI.getProductsList(categoryIsShowing);
       setDataFromApi(response);
@@ -39,6 +64,13 @@ function AdminHome() {
           <option value={tgtdCategory.tablet}>Tablet</option>
           <option value={tgtdCategory.smartwatch}>Đồng hồ thông minh</option>
         </select>
+      </div>
+
+      <div className="addWrapper mb-4">
+        <Link to={"/admin/add"} type="button" className="flex items-center justify-center w-[140px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+          <FontAwesomeIcon icon={faPlus} className="text-white mr-1" />
+          Thêm sản phẩm
+        </Link>
       </div>
 
       {/* table */}
@@ -90,14 +122,18 @@ function AdminHome() {
                   <div className="h-full flex justify-center items-center">
                     <button
                       type="button"
-                      className="focus:outline-none text-white w-[80px] bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                      className="flex items-center justify-center focus:outline-none text-white w-[90px] bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm py-2.5 mr-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                      onClick={() => handleClick("ADMIN_update")}
                     >
+                      <FontAwesomeIcon icon={faPen} className="text-white mr-1" />
                       Sửa
                     </button>
                     <button
                       type="button"
-                      className="focus:outline-none text-white w-[80px] bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                      className="flex items-center justify-center focus:outline-none text-white w-[90px] bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm py-2.5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                      onClick={() => handleDelete(product.id)}
                     >
+                      <FontAwesomeIcon icon={faTrashCan} className="text-white mr-1" />
                       Xóa
                     </button>
                   </div>

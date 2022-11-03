@@ -6,7 +6,6 @@ const routerConfig = {
   events: "/events/:events",
   search: "/search/q=:keyword",
   admin: "/admin",
-  adminUpdate: "/admin/update",
   adminAdd: "/admin/add",
 }
 
