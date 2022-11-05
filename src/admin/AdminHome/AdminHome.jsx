@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { modalSlice } from "~/redux/reducer/modalSlice";
+import { productSlice } from "~/redux/reducer/productSlice";
 
 import tgtdAPI, { tgtdCategory } from "~/utils/tgtdAPI";
 
@@ -17,10 +18,18 @@ function AdminHome() {
     setCategoryIsShowing(e.target.value);
   };
 
-  const handleClick = (type) => {
-    if (type === "ADMIN_update") {
-      dispatch(modalSlice.actions.open(type))
+  const handleUpdate = (payload, id) => {
+    console.log(payload);
+    const getDetailProduct = async () => {
+      try {  
+        const response = await tgtdAPI.getDetail(categoryIsShowing, id)
+        dispatch(productSlice.actions.add(response))
+      } catch (error) {
+        console.log(error);
+      }
     }
+    dispatch(modalSlice.actions.open(payload));
+    getDetailProduct();
   }
 
   const handleDelete = (id, category = categoryIsShowing) => {
@@ -123,7 +132,10 @@ function AdminHome() {
                     <button
                       type="button"
                       className="flex items-center justify-center focus:outline-none text-white w-[90px] bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm py-2.5 mr-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                      onClick={() => handleClick("ADMIN_update")}
+                      onClick={() => handleUpdate({
+                        typeModal: "ADMIN_update",
+                        category: categoryIsShowing
+                      }, product.id)}
                     >
                       <FontAwesomeIcon icon={faPen} className="text-white mr-1" />
                       Sửa

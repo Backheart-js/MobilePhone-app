@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import "./AdminAdd.scss";
 import tgtdAPI, { tgtdCategory } from "~/utils/tgtdAPI";
@@ -19,6 +19,8 @@ function AdminAdd() {
     status: true,
     quantity: 250,
   };
+
+  const formRef = useRef();
 
   const [category, setCategory] = useState(tgtdCategory.dtdd);
   const [properties, setProperties] = useState({});
@@ -69,9 +71,10 @@ function AdminAdd() {
     if (confirmAdd) {
       try {
         tgtdAPI.addProduct(category, data)
-        alert("Đã thêm sản phẩm")
+        formRef.current.reset();
+        alert("Đã thêm sản phẩm");
       } catch (error) {
-        alert("Lỗi: " + error)
+        alert("Lỗi: " + error);
       }
     }
   }
@@ -82,7 +85,6 @@ function AdminAdd() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
-  console.log(dataProduct);
   return (
     <div
       id="admin-add-product"
@@ -93,6 +95,7 @@ function AdminAdd() {
       </header>
       <main className="w-full pb-20">
         <form
+          ref={formRef}
           action=""
           className="form__addProduct grid grid-cols-12 gap-5 mt-5"
           onChange={handleFormChange}

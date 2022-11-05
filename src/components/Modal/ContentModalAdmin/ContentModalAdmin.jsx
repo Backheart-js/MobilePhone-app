@@ -1,9 +1,10 @@
 import React from 'react'
+import UpdateModal from './UpdateModal'
 
 function ContentModalAdmin() {
   return (
-    <div>
-        Admin modal
+    <div className="px-20">
+      <UpdateModal />
     </div>
   )
 }

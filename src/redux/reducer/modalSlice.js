@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     isShowing: false,
-    typeModal: ""
+    typeModal: "",
+    category: ""
 }
 
 export const modalSlice = createSlice({
@@ -10,12 +11,10 @@ export const modalSlice = createSlice({
     initialState,
     reducers: {
         open: (state, action) => {
-            // return {
-            //     isShowing: true,
-            //     typeModal: action.payload
-            // }
-            state.isShowing = true;
-            state.typeModal = action.payload;
+            return {
+                isShowing: true,
+                ...action.payload,
+            }
             // Mutation
         },
         close: (state, action) => {
