@@ -11,7 +11,7 @@ function AdminAdd() {
     condition: "new",
     is_discount: false,
     discount: 0,
-    price: 0,
+    original_price: 0,
     release_date: "",
     image: [],
     color: [],
