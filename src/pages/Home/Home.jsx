@@ -6,6 +6,8 @@ import PosterSlickCarousel from "~/components/SlickCarousel/PosterSlickCarousel/
 import IndexTitle from "~/components/IndexTitle";
 import CategoryBox from "./components/CategoryBox";
 import TabProduct from "./components/TabProduct";
+import ListProduct from "~/components/ListProduct";
+import { tgtdCategory } from "~/utils/tgtdAPI";
 
 function Home() {
   const category = [
@@ -185,6 +187,9 @@ function Home() {
               slidesToScroll={3}
             />
           </div>
+          <div className="home__event-list px-3 my-4">
+            <ListProduct category={tgtdCategory.dtdd} params={{brand: "Apple"}} limit={5} />
+          </div>
           <a href="/dtdd?brand=Apple" className="seeAll__btn">
             Xem tất cả sản phẩm
           </a>
@@ -293,21 +298,37 @@ function Home() {
                 image:
                   "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/homev2/goiy-1.png",
                 title: "Cho bạn",
+                category: "dtdd",
+                params: {
+                  
+                }
               },
               {
                 image:
                   "https://cdn.tgdd.vn/2022/08/campaign/icon-xa-hang-50-50x50-2.png",
                 title: "Xả hàng giảm sốc",
+                category: "dtdd",
+                params: {
+                  is_discount: true,
+                }
               },
               {
                 image:
                   "https://cdn.tgdd.vn/2022/08/campaign/50x50-chi-giam-online-48x52-2.png",
                 title: "Săn sale Online",
+                category: "dtdd",
+                params: {
+                  is_discount: true,
+                }
               },
               {
                 image:
                   "https://cdn.tgdd.vn/2022/09/campaign/lap-50x54-50x54-2.png",
                 title: "Laptop tựu trường",
+                category: "laptop",
+                params: {
+
+                }
               }
             ]}
           />

@@ -22,10 +22,12 @@ const productProperties = {
         size: "Kích thước"
     },
     [tgtdCategory.tablet]: {
-        ram: "Ram",
-        rom: "Dung lượng lưu trữ",
         screen: "Màn hình",
         operator_system: "Hệ điều hành",
+        chip: "Chip",
+        ram: "Ram",
+        rom: "Dung lượng lưu trữ",
+        connect: "Kết nối",
         camera_front: "Camera trước",
         camera_back: "Camera sau",
         sim: "Sim",

@@ -265,6 +265,7 @@ function UpdateModal() {
               Màu sắc
             </label>
             <textarea
+              value={productDataFromStore.color}
               name="color"
               className="custom-input"
               id="color"

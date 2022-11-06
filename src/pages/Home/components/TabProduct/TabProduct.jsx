@@ -2,14 +2,21 @@ import React, { useState } from "react";
 
 import "./TabProduct.scss";
 import PropTypes from "prop-types";
+import ListProduct from "~/components/ListProduct";
+import { tgtdCategory } from "~/utils/tgtdAPI";
+import { useParams } from "react-router-dom";
 
 function TabProduct({ panels = [] }) {
   const [tabIndexIsActive, setTabIndexIsActive] = useState(0);
+  const [category, setCategory] = useState(tgtdCategory.dtdd);
+  const [params, setParams] = useState({})
 
-  const handleChangeTab = (e) => {
-    setTabIndexIsActive(Number(e.target.closest(".panel__item").dataset.index));
-    //e.target.closest(".panel__item").dataset.index sẽ trả về 1 số nhưng là kiểu String
+  const handleChangeTab = (index, category, params) => {
+    setTabIndexIsActive(index);
+    setCategory(category);
+    setParams(params);
   };
+  console.log(category, params);
 
   return (
     <div id="tabProduct">
@@ -21,8 +28,10 @@ function TabProduct({ panels = [] }) {
               index === tabIndexIsActive ? "active" : ""
             }`}
             data-index={index}
+            data-category={panel.category}
+            data-params={panel.params}
             key={index}
-            onClick={handleChangeTab}
+            onClick={() => handleChangeTab(index, panel.category, panel.params)}
           >
             <div className="">
               <img src={panel.image} alt="" className="panel__img" />
@@ -30,6 +39,9 @@ function TabProduct({ panels = [] }) {
             <span className="panel__title">{panel.title}</span>
           </button>
         ))}
+      </div>
+      <div className="tab__body-wrapper pt-4">
+        <ListProduct category={category} params={params} limit={10}/>
       </div>
     </div>
   );

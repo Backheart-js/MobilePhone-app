@@ -4,11 +4,8 @@ export const tgtdCategory = {
     dtdd: 'dtdd',
     laptop: 'laptop',
     tablet: 'tablet',
-    watch: 'watch',
     smartwatch: 'smartwatch',
     usedphone: 'usedphone',
-    pc: 'pc',
-    camera: 'camera',
 }
 
 const tgtdAPI = {

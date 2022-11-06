@@ -1,0 +1,16 @@
+.product-wrapper {
+
+    &:hover {
+        .product-title {
+            color: #0077b6;
+        }
+
+        .product-image {
+            transform: translateY(-6px);
+        }
+    }
+}
+
+.product-image {
+    transition: all .2s ease-in-out;
+}
