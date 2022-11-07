@@ -4,25 +4,25 @@ import { Link } from "react-router-dom";
 import './ItemProduct.scss'
 
 function ItemProduct({ dataProduct, category, ...props }) {
-  console.log(Number(dataProduct.original_price));
   return (
     <Link
       to={`/${category}/${dataProduct.id}`}
-      className="product-wrapper w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+      className="product-wrapper w-full max-w-[235px] bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+      {...props}
     >
-      <a href="#" className="min-h-[235px] flex items-center">
+      <div className="min-h-[235px] flex items-center">
         <img
           className="product-image pt-5 pb-4 px-4 rounded-t-lg w-full h-max"
           src={dataProduct.image[0]}
-          alt="product image"
+          alt={dataProduct.name}
         />
-      </a>
+      </div>
       <div className="px-3 pb-8">
-        <a href="#">
+        <div>
           <h5 className="product-title text-[14px] font-normal tracking-tight text-gray-700 leading-5 mb-2">
             {dataProduct.name}
           </h5>
-        </a>
+        </div>
         <p className="text-[#666] text-[14px]">
           Online giá rẻ
         </p>

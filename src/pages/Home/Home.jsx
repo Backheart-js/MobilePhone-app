@@ -91,7 +91,7 @@ function Home() {
   ];
 
   return (
-    <div className="content__wrapper w-full">
+    <div className="homecontent__wrapper w-full">
       <section className="mainBanner__wrapper w-full">
         <a href="/events/mua-sam-online">
           <img

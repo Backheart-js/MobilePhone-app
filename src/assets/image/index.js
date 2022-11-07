@@ -9,3 +9,9 @@ export const poster = {
     vivo: require('~/assets/image/poster/vivo-poster.png'),
     realme: require('~/assets/image/poster/realme-poster.png'),
 }
+
+export const product = {
+    product_1: require('~/assets/image/products/product-image-1.jpg'),
+    product_2: require('~/assets/image/products/product-image-2.jpg'),
+    product_3: require('~/assets/image/products/product-image-3.jpg'),
+}
