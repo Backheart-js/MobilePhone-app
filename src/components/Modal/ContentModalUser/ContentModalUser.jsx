@@ -1,10 +1,9 @@
 import React from 'react'
+import CartModal from './CartModal'
 
 function ContentModalAdmin() {
   return (
-    <div>
-        User modal
-    </div>
+    <CartModal />
   )
 }
 

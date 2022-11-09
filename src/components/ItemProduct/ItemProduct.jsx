@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import formatPrice from "../formatPrice";
 
 import './ItemProduct.scss'
 
 function ItemProduct({ dataProduct, category, ...props }) {
   return (
-    <Link
-      to={`/${category}/${dataProduct.id}`}
+    <a
+      href={`/${category}/${dataProduct.id}`}
       className="product-wrapper w-full max-w-[235px] bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
       {...props}
     >
@@ -28,14 +28,8 @@ function ItemProduct({ dataProduct, category, ...props }) {
         </p>
         <strong className="item-price block text-[18px] text-[#d0021c] mt-2">
           {dataProduct.is_discount
-            ? Number(dataProduct.discount).toLocaleString("vi-VN", {
-                style: "currency",
-                currency: "VND",
-              })
-            : Number(dataProduct.original_price).toLocaleString("vi-VN", {
-                style: "currency",
-                currency: "VND",
-              })}
+            ? formatPrice(dataProduct.discount)
+            : formatPrice(dataProduct.original_price)}
         </strong>
         <div className="flex items-center mt-2.5 mb-5">
           <svg
@@ -93,7 +87,7 @@ function ItemProduct({ dataProduct, category, ...props }) {
           </span>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
 

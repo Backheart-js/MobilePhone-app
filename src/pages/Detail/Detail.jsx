@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Heroslider from "~/components/HeroSlider/HeroSlider";
-
+import { modalSlice } from "~/redux/reducer/modalSlice";
 import tgtdAPI from "~/utils/tgtdAPI";
 import "./Detail.scss";
 import * as images from "~/assets/image";
+import formatPrice from "~/components/formatPrice";
 import productProperties from "~/admin/proterties/properties";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
@@ -17,8 +18,10 @@ import {
   faShareFromSquare,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
-import ProductSlickCarousel from "~/components/SlickCarousel/productSlickCarousel";
 import ListProduct from "~/components/ListProduct";
+import { useDispatch, useSelector } from "react-redux";
+import { productSlice } from "~/redux/reducer/productSlice";
+import { cartSelector } from "~/redux/selectors";
 
 function Detail() {
   const typeVietnamese = {
@@ -30,14 +33,23 @@ function Detail() {
   const imageSlider = Object.entries(images.product).map((image) => {
     return image[1];
   });
-
+  const dispatch = useDispatch();
+  const cartFromStore = useSelector(cartSelector)
   const { catalog, id } = useParams();
-
   const [dataProduct, setDataProduct] = useState({});
+
+  const handleCartBtn = () => {
+    dispatch(
+      modalSlice.actions.open({ typeModal: "USER_cart", category: catalog })
+    );
+    dispatch(productSlice.actions.add(dataProduct))
+  };
 
   useEffect(() => {
     const getDataProduct = async () => {
       try {
+        window.screenTop = 0;
+        console.log(window);
         const response = await tgtdAPI.getDetail(catalog, id);
         setDataProduct(response);
       } catch (error) {
@@ -46,9 +58,10 @@ function Detail() {
     };
 
     getDataProduct();
-  }, []);
+  }, [catalog, id]);
 
-  console.log(dataProduct);
+  localStorage.setItem('cart', JSON.stringify(cartFromStore));
+
   return (
     <div className="w-full content-box">
       <div className="mt-10 flex items-center justify-between">
@@ -114,11 +127,11 @@ function Detail() {
         </div>
         <div className="flex items-center">
           <button className="flex func-btn">
-            <FontAwesomeIcon icon={faThumbsUp} className="text-white"/>
+            <FontAwesomeIcon icon={faThumbsUp} className="text-white" />
             <span className="text-white">Thích</span>
           </button>
           <button className="flex func-btn">
-            <FontAwesomeIcon icon={faShareFromSquare} className="text-white"/>
+            <FontAwesomeIcon icon={faShareFromSquare} className="text-white" />
             <span className="text-white">Chia sẻ</span>
           </button>
         </div>
@@ -138,7 +151,10 @@ function Detail() {
               <li className="detail__avatar-item">
                 <button>
                   <div className="avatar__image-wrapper">
-                    <FontAwesomeIcon className="w-[70%] h-auto text-[#666]" icon={faStar} />
+                    <FontAwesomeIcon
+                      className="w-[70%] h-auto text-[#666]"
+                      icon={faStar}
+                    />
                   </div>
                   <p className="avatar__color-text">Điểm nổi bật</p>
                 </button>
@@ -172,7 +188,10 @@ function Detail() {
               <li className="detail__avatar-item">
                 <button>
                   <div className="avatar__image-wrapper">
-                    <FontAwesomeIcon className="w-[70%] h-auto text-[#666]" icon={faCube} />
+                    <FontAwesomeIcon
+                      className="w-[70%] h-auto text-[#666]"
+                      icon={faCube}
+                    />
                   </div>
                   <p className="avatar__color-text">Thông số kỹ thuật</p>
                 </button>
@@ -180,7 +199,10 @@ function Detail() {
               <li className="detail__avatar-item">
                 <button>
                   <div className="avatar__image-wrapper">
-                    <FontAwesomeIcon className="h-[60%] text-[#666]" icon={faInfo} />
+                    <FontAwesomeIcon
+                      className="h-[60%] text-[#666]"
+                      icon={faInfo}
+                    />
                   </div>
                   <p className="avatar__color-text">Thông tin</p>
                 </button>
@@ -232,29 +254,15 @@ function Detail() {
               <div className="price flex mb-3">
                 <span className="text-[#d0021c] text-[20px] font-bold">
                   {dataProduct.is_discount
-                    ? Number(dataProduct.discount).toLocaleString("vi-VN", {
-                        style: "currency",
-                        currency: "VND",
-                      })
-                    : Number(dataProduct.original_price).toLocaleString(
-                        "vi-VN",
-                        {
-                          style: "currency",
-                          currency: "VND",
-                        }
-                      )}
+                    ? formatPrice(dataProduct.discount)
+                    : formatPrice(dataProduct.original_price)
+                  }
                 </span>
                 {dataProduct.is_discount && (
                   <div className="ml-2">
                     <span className="text-[#d0021c] text-[18px]">* </span>
                     <span className="line-through text-[16px] text-[#666] leading-[24px]">
-                      {Number(dataProduct.original_price).toLocaleString(
-                        "vi-VN",
-                        {
-                          style: "currency",
-                          currency: "VND",
-                        }
-                      )}
+                      {formatPrice(dataProduct.original_price)}
                     </span>
                     <span className="text-[#d0021c] text-[18px] ml-2">
                       -
@@ -405,7 +413,7 @@ function Detail() {
             </div>
             <div className="addtocart__box grid grid-cols-2 gap-2">
               <div className="addtocart__wrapper col-span-2">
-                <button className="addtocart__btn uppercase">mua ngay</button>
+                <button className="addtocart__btn uppercase" onClick={handleCartBtn}>mua ngay</button>
               </div>
               <div className="payonline__wrapper">
                 <button className="payonline__btn">
@@ -427,51 +435,61 @@ function Detail() {
                 </p>
               </div>
               <ul className="parameter__list">
-                {dataProduct.properties && Object.entries(dataProduct.properties).map(
-                  (parameter, index) => {
-                    const propertyVietnamese = productProperties[catalog];
-                    return (
-                      <li
-                        className="parameter__item"
-                        key={index}
-                        style={
-                          index % 2 === 0
-                            ? {
-                                backgroundColor: "#f5f5f5",
-                              }
-                            : {}
-                        }
-                      >
-                        <span className="parameter-name">
-                          {propertyVietnamese[parameter[0]]}
-                        </span>
-                        <span className="parameter-content">
-                          {parameter[1]}
-                        </span>
-                      </li>
-                    );
-                  }
-                )}
+                {dataProduct.properties &&
+                  Object.entries(dataProduct.properties).map(
+                    (parameter, index) => {
+                      const propertyVietnamese = productProperties[catalog];
+                      return (
+                        <li
+                          className="parameter__item"
+                          key={index}
+                          style={
+                            index % 2 === 0
+                              ? {
+                                  backgroundColor: "#f5f5f5",
+                                }
+                              : {}
+                          }
+                        >
+                          <span className="parameter-name">
+                            {propertyVietnamese[parameter[0]]}
+                          </span>
+                          <span className="parameter-content">
+                            {parameter[1]}
+                          </span>
+                        </li>
+                      );
+                    }
+                  )}
               </ul>
             </div>
           </div>
         </div>
-        
+
         <div className="suggest__product-wrapper my-5">
           <div className="suggest__header-wrapper flex justify-between">
             <div className="suggest__title">
-              <span className="suggest__title-text">Xem thêm sản phẩm tương tự</span>
+              <span className="suggest__title-text">
+                Xem thêm sản phẩm tương tự
+              </span>
             </div>
             <div className="sugget__viewall">
-              <a href={`/${catalog}?brand=${dataProduct.brand}`} className="text-[#4a90e2] leading-4 text-[15px]">
+              <a
+                href={`/${catalog}?brand=${dataProduct.brand}`}
+                className="text-[#4a90e2] leading-4 text-[15px]"
+              >
                 Xem tất tả
               </a>
             </div>
           </div>
           <div className="suggest__body-wrapper mx-[4px] mt-5">
-            <ListProduct category={catalog} params={{
-              brand: dataProduct.brand
-            }} limit={5} />
+            <ListProduct
+              category={catalog}
+              params={{
+                brand: dataProduct.brand,
+              }}
+              limit={5}
+            />
           </div>
         </div>
       </div>

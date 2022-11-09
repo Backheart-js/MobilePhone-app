@@ -42,3 +42,5 @@
 
         export default icons;
     ```
+
+2. Trong reducer của Redux-toolkit, khi ra mutation trực tiếp vào state thì không cần return, còn nếu đặt ra 1 biến mới thì có return

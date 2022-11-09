@@ -1,5 +1,7 @@
 const routerConfig = {
   home: "/",
+  category: "/:catalog?brand=:brand",
+  // eslint-disable-next-line no-dupe-keys
   category: "/:catalog",
   detail: "/:catalog/:id",
   cart: "/cart",

@@ -1,0 +1,37 @@
+.image__wrapper {
+    border: 1px solid #d1d1d1;
+}
+
+.quantity__tool-wrapper {
+    border: 1px solid #dfdfdf;
+}
+
+.minus-btn,
+.plus-btn {
+    width: 30px;
+    height: 30px;
+}
+
+.choose__quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.minus-btn {
+    border-right: 1px solid #dfdfdf;
+
+    &.disabled {
+        .minus-icon {
+            color: #ccc;
+        }
+    }
+}
+.plus-btn {
+    border-left: 1px solid #dfdfdf;
+}
+.cart-icon {
+    color: #288ad6;
+}
