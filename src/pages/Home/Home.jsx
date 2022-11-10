@@ -14,18 +14,22 @@ function Home() {
     {
       image: "https://cdn.tgdd.vn//content/Laptop-129x129.png",
       title: "Laptop",
+      link: "/laptop"
     },
     {
       image: "https://cdn.tgdd.vn//content/Tablet-128x129.png",
       title: "Tablet",
+      link: "/tablet"
     },
     {
       image: "https://cdn.tgdd.vn//content/Donghothongminh-128x129.png",
       title: "Đồng hồ thông minh",
+      link: "/smartwatch"
     },
     {
       image: "https://cdn.tgdd.vn//content/DT-128x129.png",
       title: "Điện thoại giá rẻ",
+      link: "/dtdd?is_discount=true"
     },
     {
       image: "https://cdn.tgdd.vn//content/Donghothoitrang-128x129.png",
@@ -201,7 +205,7 @@ function Home() {
           </IndexTitle>
           <ul className="home__trending-list grid grid-cols-4 gap-2">
             <li className="home__trending-item col-span-1">
-              <a href="/" className="home__trending-link">
+              <a href="/dtdd" className="home__trending-link">
                 <img
                   src="https://cdn.tgdd.vn/2022/08/banner/Frame-4919-280x235.png"
                   alt=""
@@ -214,7 +218,7 @@ function Home() {
               </a>
             </li>
             <li className="home__trending-item col-span-1">
-              <a href="/" className="home__trending-link">
+              <a href="/laptop?brand=Apple" className="home__trending-link">
                 <img
                   src="https://cdn.tgdd.vn/2022/10/banner/xh-mac-desk-moi-280x235.png"
                   alt=""
@@ -238,7 +242,7 @@ function Home() {
               </a>
             </li>
             <li className="home__trending-item col-span-1">
-              <a href="/" className="home__trending-link">
+              <a href="/smartwatch" className="home__trending-link">
                 <img
                   src="https://cdn.tgdd.vn/2022/10/banner/kidcare-s88-280x235.png"
                   alt=""
@@ -264,6 +268,7 @@ function Home() {
                 key={index}
                 imgSrc={product.image}
                 title={product.title}
+                link={product?.link}
               />
             ))}
           </div>
