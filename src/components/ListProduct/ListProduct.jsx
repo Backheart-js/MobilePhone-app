@@ -31,4 +31,10 @@ function ListProduct({ className, category, params = {}, limit }) {
   );
 }
 
+ListProduct.propTypes = {
+  className: PropTypes.string,
+  category: PropTypes.string.isRequired,
+  params: PropTypes.object,
+  limit: PropTypes.number
+}
 export default ListProduct;

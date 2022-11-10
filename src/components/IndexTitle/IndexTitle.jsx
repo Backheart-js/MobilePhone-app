@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './IndexTitle.scss'
 
 function IndexTitle({ className, children }) {
@@ -7,6 +8,11 @@ function IndexTitle({ className, children }) {
         {children}
     </strong>
   )
+}
+
+IndexTitle.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
 }
 
 export default IndexTitle

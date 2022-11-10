@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 import './PosterSlickCarousel.scss'
 
@@ -11,4 +12,7 @@ function PosterSlickItem({ dataItem }) {
   )
 }
 
+PosterSlickItem.propTypes = {
+  dataItem: PropTypes.string.isRequired
+}
 export default PosterSlickItem

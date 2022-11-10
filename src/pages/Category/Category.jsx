@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import ListProduct from "~/components/ListProduct";
 
-import Loader from "~/components/Loader";
 import tgtdAPI from "~/utils/tgtdAPI";
 import "./Category.scss";
 
@@ -41,7 +40,6 @@ function Category() {
       : {};
   const [filter, setFilter] = useState(initFilter);
   const [dataProducts, setDataProducts] = useState([]);
-  const [showLoader, setShowLoader] = useState(false)
 
   const handleChangeFilter = (e) => {
     let filterValue = e.target.closest('.dropdown-btn').value;
@@ -170,7 +168,6 @@ function Category() {
       <div className="productList">
         <ListProduct className={'mt-6'} category={catalog} params={filter} limit={40} />
       </div>
-      <Loader handleShow={showLoader}/>
     </div>
   );
 }

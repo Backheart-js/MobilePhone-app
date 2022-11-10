@@ -1,6 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import formatPrice from "../formatPrice";
-
 import './ItemProduct.scss'
 
 function ItemProduct({ dataProduct, category, ...props }) {
@@ -89,6 +89,11 @@ function ItemProduct({ dataProduct, category, ...props }) {
       </div>
     </a>
   );
+}
+
+ItemProduct.propTypes = {
+  dataProduct: PropTypes.object.isRequired,
+  category: PropTypes.string.isRequired,
 }
 
 export default ItemProduct;

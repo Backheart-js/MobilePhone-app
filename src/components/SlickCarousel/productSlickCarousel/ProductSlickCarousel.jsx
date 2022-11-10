@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import PropTypes from 'prop-types'
 import Slider from 'react-slick';
 import tgtdAPI from '~/utils/tgtdAPI';
 import ItemProduct from '~/components/ItemProduct';
@@ -36,4 +37,9 @@ function ProductSlickCarousel({ catalog, parameter, className, ...props }) {
   )
 }
 
+ProductSlickCarousel.propTypes = {
+  catalog: PropTypes.string.isRequired,
+  parameter: PropTypes.object,
+  className: PropTypes.string
+}
 export default ProductSlickCarousel;

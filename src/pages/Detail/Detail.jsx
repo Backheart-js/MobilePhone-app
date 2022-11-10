@@ -48,8 +48,6 @@ function Detail() {
   useEffect(() => {
     const getDataProduct = async () => {
       try {
-        window.screenTop = 0;
-        console.log(window);
         const response = await tgtdAPI.getDetail(catalog, id);
         setDataProduct(response);
       } catch (error) {

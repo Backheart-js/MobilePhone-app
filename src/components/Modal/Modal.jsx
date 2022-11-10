@@ -16,10 +16,10 @@ function Modal(props) {
   }
 
   return (
-    modalDataFromStore.isShowing && (
+    
       <div
         id="modal"
-        className="fixed inset-0 flex justify-center overflow-x-scroll"
+        className={`fixed inset-0 overflow-x-scroll ${modalDataFromStore.isShowing ? "active" : ""}`}
       >
         <main className="modal__content-box absolute top-[20%] bg-white max-w-[1150px] min-w-[550px] min-h-[400px] rounded-lg">
           {/* modal header */}
@@ -55,7 +55,7 @@ function Modal(props) {
           
         </main>
       </div>
-    )
+    
   );
 }
 

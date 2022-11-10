@@ -1,6 +1,7 @@
 import React from 'react'
-import Modal from '~/components/Modal'
+import PropTypes from 'prop-types'
 
+import Modal from '~/components/Modal'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import './MainLayout.scss'
@@ -18,4 +19,7 @@ function MainLayout({ children }) {
   )
 }
 
+MainLayout.propTypes = {
+  children: PropTypes.node.isRequired
+}
 export default MainLayout

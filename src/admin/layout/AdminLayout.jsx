@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types';
+
 import Modal from '~/components/Modal'
 import AdminHeader from './components/AdminHeader'
 
@@ -14,4 +16,7 @@ function AdminLayout({ children }) {
   )
 }
 
+AdminLayout.propTypes = {
+  children: PropTypes.node.isRequired
+}
 export default AdminLayout

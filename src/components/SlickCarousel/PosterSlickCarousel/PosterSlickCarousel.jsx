@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
@@ -28,4 +29,8 @@ function PosterSlickCarousel({ posterImage = [], className, ...props }) {
   )
 }
 
+PosterSlickCarousel.propTypes = {
+  posterImage: PropTypes.array.isRequired,
+  className: PropTypes.string
+}
 export default PosterSlickCarousel;

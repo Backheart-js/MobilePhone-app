@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSlider, { Slide } from "hero-slider";
+import PropTypes from 'prop-types';
 
 import "./HeroSlider.scss";
 
@@ -39,6 +40,10 @@ function Heroslider({ imageList = [], ...props }) {
       })}
     </HeroSlider>
   );
+}
+
+HeroSlider.propTypes = {
+  imageList: PropTypes.array
 }
 
 export default Heroslider;

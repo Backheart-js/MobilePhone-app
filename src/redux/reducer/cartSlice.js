@@ -23,7 +23,8 @@ export const cartSlice = createSlice({
         remove: (state, action) => {
             let newState = [];
             newState = state.splice(action.payload, 1)
-        }
+        },
+        pay: (state) => []
     }
 })
 

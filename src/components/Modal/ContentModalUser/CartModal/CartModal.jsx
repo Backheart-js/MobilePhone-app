@@ -1,5 +1,6 @@
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ConsoleLogger from "hero-slider/dist/modules/ConsoleLogger";
 import React, { useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -14,6 +15,7 @@ function CartModal() {
   const dispatch = useDispatch();
   const { catalog } = useParams();
   const [quantity, setQuantity] = useState(1)
+  const cart = JSON.parse(localStorage.getItem("cart"));
 
   const minusBtnRef = useRef(null)
 
@@ -30,7 +32,6 @@ function CartModal() {
       info: dataProductAddToCart,
       quantity: quantity
     };
-
     dispatch(cartSlice.actions.add(newData));
     dispatch(modalSlice.actions.close())
   }
