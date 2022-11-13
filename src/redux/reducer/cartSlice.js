@@ -7,7 +7,6 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         add: (state, action) => {
-            let newState = [];
             let id_isExist = 0;
             const dataAddToCart = action.payload;
             const isExists = state.some((item, index) => {
@@ -21,8 +20,7 @@ export const cartSlice = createSlice({
             }
         },
         remove: (state, action) => {
-            let newState = [];
-            newState = state.splice(action.payload, 1)
+            state.splice(action.payload, 1)
         },
         pay: (state) => []
     }

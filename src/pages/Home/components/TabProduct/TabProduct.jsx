@@ -4,7 +4,6 @@ import "./TabProduct.scss";
 import PropTypes from "prop-types";
 import ListProduct from "~/components/ListProduct";
 import { tgtdCategory } from "~/utils/tgtdAPI";
-import { useParams } from "react-router-dom";
 
 function TabProduct({ panels = [] }) {
   const [tabIndexIsActive, setTabIndexIsActive] = useState(0);
@@ -47,4 +46,7 @@ function TabProduct({ panels = [] }) {
   );
 }
 
+TabProduct.propTypes = {
+  panels: PropTypes.array
+}
 export default TabProduct;

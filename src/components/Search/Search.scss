@@ -9,12 +9,14 @@
 }
 
 .search__input {
+    font-size: 15px;
+    color: $text_color;
     border: none;
     outline: none;
     flex-grow: 1;
 
     &:focus {
-        outline: none;
+        --tw-ring-color: none
     }
 
     &::placeholder {
@@ -26,4 +28,23 @@
 .search__btn {
     width: 40px;
     height: 40px;
+}
+
+.searchresult__title {
+    background: #f5f5f5;
+    font-size: 13px;
+    color: #666;
+    font-weight: 400;
+    padding: 10px;
+}
+
+.searchresult__list {
+    padding: 8px 12px;
+}
+
+.searchresult__viewall {
+    display: block;
+    text-align: center;
+    color: #3b7adb;
+    padding: 2px 0 8px 0;
 }

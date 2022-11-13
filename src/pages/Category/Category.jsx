@@ -1,10 +1,9 @@
 import { faFilter, faSortDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import ListProduct from "~/components/ListProduct";
 
-import tgtdAPI from "~/utils/tgtdAPI";
 import "./Category.scss";
 
 function Category() {
@@ -39,7 +38,6 @@ function Category() {
         }
       : {};
   const [filter, setFilter] = useState(initFilter);
-  const [dataProducts, setDataProducts] = useState([]);
 
   const handleChangeFilter = (e) => {
     let filterValue = e.target.closest('.dropdown-btn').value;
@@ -56,20 +54,9 @@ function Category() {
     }
   };
 
-  useEffect(() => {
-    const getDataProducts = async () => {
-      const params = filter;
-      try {
-        const response = await tgtdAPI.getProductsList(catalog, params);
-        setDataProducts(response);
-      } catch (error) {
-        throw error;
-      }
-    };
-
-    getDataProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter, searchParams]);
+  // useEffect(() => {
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [filter, searchParams]);
 
 
   return (

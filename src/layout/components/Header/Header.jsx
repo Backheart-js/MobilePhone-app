@@ -1,6 +1,6 @@
 import { faCaretDown, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, {useEffect} from "react";
+import React from "react";
 
 import Search from "~/components/Search";
 import "./Header.scss";
@@ -21,7 +21,7 @@ function Header() {
         </div>
         <div className="header__main-wrapper grid grid-cols-12 gap-4">
           <div className="header__logo-wrapper col-span-4">
-            <a href="/" className="w-full h-full">
+            <a href="/" className="">
               <img
                 className="w-[228px] h-full"
                 src="https://cdn.haitrieu.com/wp-content/uploads/2021/11/Logo-The-Gioi-Di-Dong-MWG-B-H.png"
