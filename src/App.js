@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "~/App.scss";
 import { publicRouter } from "./routers";
 
 function App() {
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    if (cart === null) {
+      localStorage.setItem('cart', JSON.stringify([]));
+    }
+  }, [])
+  
   return (
     <BrowserRouter>
       <div className="App">

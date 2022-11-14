@@ -50,7 +50,6 @@ function Search() {
         const response = await tgtdAPI.getProductsList(catalog);
         setCategory(catalog);
         setSearchResult(response);
-        // console.log(response);
       } catch (error) {
         setSearchResult([]);
         throw error;

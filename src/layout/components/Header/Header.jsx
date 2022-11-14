@@ -39,7 +39,7 @@ function Header() {
               </a>
             </div>
             <div className="cart__wrapper mr-[22px]">
-              {cart.length > 0 && (
+              {cart !== null && cart.length > 0 && (
                 <div className="cart-quantity"><span>{cart.length}</span></div>
               )}
               <a href="/cart" className="cart__link flex">

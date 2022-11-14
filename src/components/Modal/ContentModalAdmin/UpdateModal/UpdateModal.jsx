@@ -81,7 +81,7 @@ function UpdateModal() {
   useEffect(() => {
     setProperties(productProperties[modalDataFromStore.category]);
   }, []);
-  console.log(productDataFromStore);
+
   return (
     <div
       id="admin-add-product"

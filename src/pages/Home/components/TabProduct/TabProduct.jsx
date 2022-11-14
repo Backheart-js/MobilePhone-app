@@ -15,7 +15,6 @@ function TabProduct({ panels = [] }) {
     setCategory(category);
     setParams(params);
   };
-  console.log(category, params);
 
   return (
     <div id="tabProduct">

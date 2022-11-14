@@ -19,7 +19,6 @@ function AdminHome() {
   };
 
   const handleUpdate = (payload, id) => {
-    console.log(payload);
     const getDetailProduct = async () => {
       try {  
         const response = await tgtdAPI.getDetail(categoryIsShowing, id)
