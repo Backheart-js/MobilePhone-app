@@ -9,6 +9,7 @@ const routerConfig = {
   search: "/search/q=:keyword",
   admin: "/admin",
   adminAdd: "/admin/add",
+  adminLogin: "/admin/login",
 }
 
 export default routerConfig
