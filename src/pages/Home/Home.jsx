@@ -128,7 +128,7 @@ function Home() {
                 alt=""
                 className="home__promo-img"
               />
-              <span className="">Săn Sale Online</span>
+              <span className="block w-[190px]">Săn Sale Online</span>
             </a>
           </li>
           <li className="home__promo-item col-span-1">
@@ -138,17 +138,17 @@ function Home() {
                 alt=""
                 className="home__promo-img"
               />
-              <span className="">Laptop tựu trường</span>
+              <span className="block w-[190px]">Laptop tựu trường</span>
             </a>
           </li>
           <li className="home__promo-item col-span-1">
-            <a href="/" className="home__promo-link">
+            <a href="/dtdd?condition=used" className="home__promo-link">
               <img
-                src="https://cdn.tgdd.vn//content/100x100-TGDD-100x100-1.png"
+                src="https://cdn.tgdd.vn//content/icon-100x100no-100x100-1.gif"
                 alt=""
                 className="home__promo-img"
               />
-              <span className="">Halloween sale sốc</span>
+              <span className="block w-[170px]">Máy cũ giảm đến 50%</span>
             </a>
           </li>
           <li className="home__promo-item col-span-1">
@@ -158,7 +158,7 @@ function Home() {
                 alt=""
                 className="home__promo-img"
               />
-              <span className="">Điện thoại độc quyền</span>
+              <span className="block w-[190px]">Điện thoại độc quyền</span>
             </a>
           </li>
         </ul>

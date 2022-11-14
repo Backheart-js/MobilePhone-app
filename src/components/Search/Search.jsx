@@ -41,6 +41,10 @@ function Search() {
       catalog = tgtdCategory.smartwatch;
     }
 
+    if(!debounce) {
+      return;
+    }
+
     const getResult = async () => {
       try {
         const response = await tgtdAPI.getProductsList(catalog);

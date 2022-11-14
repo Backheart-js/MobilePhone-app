@@ -54,11 +54,6 @@ function Category() {
     }
   };
 
-  // useEffect(() => {
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [filter, searchParams]);
-
-
   return (
     <div className="max-w-[1220px] mx-auto mt-5">
       <div className="filter__wrapper flex items-center">

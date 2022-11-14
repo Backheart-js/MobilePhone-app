@@ -21,7 +21,7 @@ function Header() {
         </div>
         <div className="header__main-wrapper grid grid-cols-12 gap-4">
           <div className="header__logo-wrapper col-span-4">
-            <a href="/" className="">
+            <a href="/" className="block w-max">
               <img
                 className="w-[228px] h-full"
                 src="https://cdn.haitrieu.com/wp-content/uploads/2021/11/Logo-The-Gioi-Di-Dong-MWG-B-H.png"
@@ -109,6 +109,20 @@ function Header() {
               </a>
             </li>
             <li className="header__sub-item">
+              <a href="/smartwatch" className="header__sub-link flex">
+                <i className="mr-1">
+                  <img
+                    src={icons.smart_watch}
+                    alt=""
+                    className="w-[20px] h-[20px]"
+                  />
+                </i>
+                <span className="text-[15px] leading-[20px] text-black">
+                  Smart watch
+                </span>
+              </a>
+            </li>
+            <li className="header__sub-item">
               <a href="/phu-kien" className="header__sub-link flex">
                 <i className="mr-1">
                   <img
@@ -124,20 +138,6 @@ function Header() {
                   className="h-[20px] ml-1 text-xs"
                   icon={faCaretDown}
                 />
-              </a>
-            </li>
-            <li className="header__sub-item">
-              <a href="/smartwatch" className="header__sub-link flex">
-                <i className="mr-1">
-                  <img
-                    src={icons.smart_watch}
-                    alt=""
-                    className="w-[20px] h-[20px]"
-                  />
-                </i>
-                <span className="text-[15px] leading-[20px] text-black">
-                  Smart watch
-                </span>
               </a>
             </li>
             <li className="header__sub-item">

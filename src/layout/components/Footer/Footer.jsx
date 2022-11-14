@@ -120,28 +120,22 @@ function Footer() {
           </ul>
         </section>
         <section className="footer__col col-span-3">
-          <div className="footer__logo-wrapper">
-            <div className="footer__social-wrapper">
-              <a href="" className="footer__social-link">
-                
+          <div className="footer__logo-wrapper grid grid-cols-2">
+            <div className="footer__social-wrapper col-span-1">
+              <a href="/" className="flex justify-center">
+                <img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/42008041469/original/Mo9gDy2XMZLppkUw4sWCsYV-lk65HqqgQw.gif?1539077990" alt="" className="" />
               </a>
             </div>
-            <div className="footer__social-wrapper">
-              <a href="" className="footer__social-link">
-                
+            <div className="footer__social-wrapper col-span-1">
+              <a href="/" className="flex justify-center">
+                <img src="https://images.dmca.com/Badges/dmca-badge-w100-2x1-03.png" alt="" className="" />
               </a>
             </div>
-            <div className="footer__social-wrapper">
-              <a href="" className="footer__social-link">
-                
+            <div className="footer__social-wrapper col-span-1">
+              <a href="/" className="flex justify-center">
+                <img src="https://media.loveitopcdn.com/3807/logo-ncsc-4.png" alt="" className="" />
               </a>
             </div>
-          </div>
-          <div className="footer__logo-wrapper">
-            
-          </div>
-          <div className="footer__logo-wrapper">
-
           </div>
         </section>
       </div>
